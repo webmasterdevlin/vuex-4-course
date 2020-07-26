@@ -1,7 +1,12 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import { store } from "./store";
+import { createLogger } from 'vuex'
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+app.use(store);
+app.mount("#app");
 
 /* Vue.js version 2
 
