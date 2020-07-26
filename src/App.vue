@@ -2,7 +2,9 @@
   <div id="app">
     <HeaderNav></HeaderNav>
     <div class="container">
-      <div class="my-5"><router-view></router-view></div>
+      <div class="my-5">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>

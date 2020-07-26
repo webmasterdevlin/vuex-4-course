@@ -1,9 +1,9 @@
 import { createStore, createLogger } from "vuex";
-import hero from "./hero";
+import heroModule from "./hero";
 
 export const store = createStore({
   modules: {
-    hero,
+    heroModule,
   },
   plugins: [createLogger()],
 });
