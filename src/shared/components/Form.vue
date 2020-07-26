@@ -1,6 +1,10 @@
 9 lines (87 sloc) 2.41 KB
 <template>
-  <div class="card my-3" style="width: auto;">
+  <div
+    class="card my-3"
+    style="
+      width: auto;    "
+  >
     <form class="card-header" @submit.prevent="onSubmit">
       <section class="d-flex flex-row">
         <div class="mt-3 mr-3 input-width">
