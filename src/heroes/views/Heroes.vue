@@ -1,6 +1,15 @@
 <template>
   <div class="container-fluid">
     <h1>Heroes Works!</h1>
+    <div style="display: flex; place-content: center; place-items: center;">
+      <div class="mb-5">
+        <Form
+          :text="'Save New Hero'"
+          :obj="heroForm"
+          @handleSubmit="onSubmitHero"
+        />
+      </div>
+    </div>
     <div
       v-if="isLoading"
       style="display: flex; flex-direction: row; justify-content: center;"
@@ -45,21 +54,45 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
+import Form from "../../shared/components/Form";
+
 export default {
   name: "Heroes",
+  components: { Form },
+
+  data: () => ({
+    heroForm: {
+      id: "",
+      firstName: "",
+      lastName: "",
+      house: "",
+      knownAs: "",
+    },
+  }),
 
   setup() {
     return {};
   },
+
   computed: {
-    ...mapGetters("hero", {
+    ...mapGetters("heroModule", {
       heroes: "heroes",
       isLoading: "isLoading",
     }),
   },
+
   methods: {
-    ...mapActions("hero", ["getHeroesAction", "removeHeroAction"]),
+    ...mapActions("heroModule", [
+      "getHeroesAction",
+      "removeHeroAction",
+      "addHeroAction",
+    ]),
+    onSubmitHero() {
+      this.addHeroAction(this.heroForm);
+      this.heroForm = {};
+    },
   },
+
   mounted() {
     this.getHeroesAction();
   },
