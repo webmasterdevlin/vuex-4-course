@@ -4,18 +4,29 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "backend": "json-server --watch db.json --port 5000 --delay=1000 -m ./node_modules/json-server-auth",
+    "start:dev": "concurrently \"yarn run backend\" \"yarn run serve\""
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^5.0.0-alpha1",
+    "bootstrap-icons": "^1.0.0-alpha5",
     "core-js": "^3.6.5",
+    "jsonwebtoken": "^8.5.1",
     "vue": "^3.0.0-rc.4",
     "vue-router": "^4.0.0-beta.4",
     "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
     "@vue/cli-plugin-babel": "~4.4.6",
     "@vue/cli-service": "~4.4.6",
     "@vue/compiler-sfc": "3.0.0-rc.4",
+    "concurrently": "^5.2.0",
+    "json-server": "^0.16.1",
+    "json-server-auth": "^2.0.2",
+    "prettier": "^2.0.5",
     "vue-cli-plugin-vue-next": "~0.1.3"
   }
 }
