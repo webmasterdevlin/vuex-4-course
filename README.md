@@ -35,6 +35,14 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
+### Vuex Setup
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- create store
+- write a module
+- write a state
+- write an api service
+- write a type
+- write an action
+- write a mutation
+- write a getter
+- update components with mapGetters and mapActions

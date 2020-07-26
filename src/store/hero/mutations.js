@@ -2,7 +2,7 @@ import * as types from "./types";
 
 const mutations = {
   [types.GET_HEROES](state, heroes) {
-    console.log("GET_HEROES");
+    console.log("mutation.js_[types.GET_HEROES]");
     state.heroes = heroes;
   },
 
@@ -15,8 +15,12 @@ const mutations = {
   },
 
   [types.ADD_HERO](state, heroData) {
-    console.log("MUTATIONS::", heroData);
     state.heroes.push(heroData);
+  },
+
+  [types.UPDATE_HERO](state, hero) {
+    const index = state.heroes.findIndex((h) => h.id === hero.id);
+    state.heroes[index] = hero;
   },
 };
 
