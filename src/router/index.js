@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 // there is also createWebHashHistory and createMemoryHistory
 import Heroes from "../heroes/views/Heroes";
 import Home from "../views/Home";
-import { authGuard } from '../auth/authGuard'
-
+import { authGuard } from "../auth/authGuard";
+import { isTokenFromLocalStorageValid } from "../auth/auth.service";
 
 const routerHistory = createWebHistory(process.env.BASE_URL);
 
@@ -25,32 +25,41 @@ export const router = createRouter({
       name: "heroes",
       component: Heroes,
       meta: {
-        title: 'Heroes',
+        title: "Heroes",
         requiresAuth: true,
       },
     },
     {
       path: "/login",
       name: "login",
-      meta:{
-          title: "Login",
-          requiresAuth: false,
+      meta: {
+        title: "Login",
+        requiresAuth: false,
       },
       component: () => import("../auth/views/Login"),
     },
     {
       path: "/continue-as",
       name: "continue-as",
-      meta:{
+      meta: {
         title: "ContinueAs",
         requiresAuth: false,
+      },
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem("token")) {
+          next("/");
+        } else if (isTokenFromLocalStorageValid()) {
+          next();
+        } else {
+          next(false);
+        }
       },
       component: () => import("../auth/views/ContinueAs"),
     },
     {
       path: "/register",
       name: "register",
-      meta:{
+      meta: {
         title: "Register",
         requiresAuth: false,
       },
@@ -59,7 +68,7 @@ export const router = createRouter({
     {
       path: "/forgot-password",
       name: "forgetPassword",
-      meta:{
+      meta: {
         title: "Forget Password",
         requiresAuth: false,
       },
@@ -69,9 +78,8 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    authGuard(to, from, next);
-})
-
+  authGuard(to, from, next);
+});
 
 const dirLog = {
   "": "？",

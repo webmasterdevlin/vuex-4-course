@@ -3,33 +3,35 @@ import * as jwt from "jsonwebtoken";
 const accessToken = "token";
 
 export function logOut() {
-  localStorage.clear(accessToken)
+  localStorage.clear(accessToken);
   window.location = "/login";
 }
 
 export function getAccessToken() {
-    return localStorage.getItem(accessToken);
+  return localStorage.getItem(accessToken);
 }
 
 export function getUserEmailFromToken() {
-  const token = localStorage.getItem(accessToken)
+  const token = localStorage.getItem(accessToken);
   if (!token) return false;
+
   const decoded = jwt.decode(token);
 
-  return decoded.email
+  return decoded.email;
 }
 
-export function isValidTokenFromLocalStorage() {
-  const token = localStorage.getItem(accessToken)
+export function isTokenFromLocalStorageValid() {
+  const token = localStorage.getItem(accessToken);
   if (!token) return false;
   const decoded = jwt.decode(token);
 
   const expiresAt = decoded.exp * 1000;
   const dateNow = Date.now();
+
   return dateNow <= expiresAt;
 }
 
 export default {
   logOut,
-  isValidTokenFromLocalStorage,
+  isTokenFromLocalStorageValid,
 };

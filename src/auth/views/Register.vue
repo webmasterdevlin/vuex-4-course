@@ -7,10 +7,11 @@
         <label for="email">Email address</label>
         <input
           v-model="registerForm.email"
+          placeholder="📧"
           autocomplete="off"
           id="email"
           type="email"
-          class="form-control"
+          class="form-control form-control-lg"
         />
       </section>
 
@@ -18,10 +19,11 @@
         <label for="password">Password</label>
         <input
           v-model="registerForm.password"
+          placeholder="🔑"
           autocomplete="off"
           id="password"
           type="password"
-          class="form-control"
+          class="form-control form-control-lg"
         />
       </section>
 
@@ -60,6 +62,6 @@ export default {
 };
 </script>
 
-<style>
-@import "../auth.css";
+<style scoped>
+
 </style>

@@ -3,27 +3,29 @@
     <form @submit.prevent="onSubmit">
       <h3>Login</h3>
 
-      <div class="form-group">
+      <section class="form-group">
         <label for="email">Email address</label>
         <input
           v-model="loginForm.email"
+          placeholder="📧"
           autocomplete="off"
           id="email"
           type="email"
           class="form-control form-control-lg"
         />
-      </div>
+      </section>
 
-      <div class="form-group">
+      <section class="form-group">
         <label for="password">Password</label>
         <input
           v-model="loginForm.password"
+          placeholder="🔑"
           autocomplete="off"
           id="password"
           type="password"
           class="form-control form-control-lg"
         />
-      </div>
+      </section>
 
       <button type="submit" class="btn btn-dark btn-lg btn-block">Login</button>
 
@@ -58,6 +60,6 @@ export default {
 };
 </script>
 
-<style>
-@import "../auth.css";
+<style scoped>
+
 </style>

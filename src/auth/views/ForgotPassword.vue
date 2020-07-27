@@ -3,16 +3,17 @@
     <form @submit.prevent="chekEmailAlert = true">
       <h3>Forgot Password</h3>
 
-      <div class="form-group">
+      <section class="form-group">
         <label for="email">Email address</label>
         <input
           v-model="resetPasswordForm.email"
+          placeholder="📧"
           autocomplete="off"
           id="email"
           type="email"
           class="form-control form-control-lg"
         />
-      </div>
+      </section>
 
       <button type="submit" class="btn btn-dark btn-lg btn-block mb-2">Reset password</button>
       <div
@@ -38,6 +39,6 @@ export default {
 };
 </script>
 
-<style>
-@import "../auth.css";
+<style scoped>
+
 </style>

@@ -1,6 +1,6 @@
 import * as types from "./types";
 import { loginUserAxios, registerUserAxios } from "../../shared/api-call";
-import { getAccessToken, isValidTokenFromLocalStorage } from '../../auth/auth.service'
+import { getAccessToken, isTokenFromLocalStorageValid } from '../../auth/auth.service'
 
 export function loginUserAction({ commit }, payload) {
 
@@ -17,7 +17,7 @@ export function registerUserAction({ commit }, payload) {
 }
 
 export function useLocalStorageTokenToSignIn({commit}) {
-    if (!isValidTokenFromLocalStorage()) return;
+    if (!isTokenFromLocalStorageValid()) return;
 
     const token = getAccessToken();
 
