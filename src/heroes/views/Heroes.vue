@@ -6,7 +6,11 @@
       style="display: flex; place-content: center; place-items: center; "
     >
       <div class="mb-5">
-        <Form :text="'Save New Hero'" :obj="heroForm" @handleSubmit="onSubmitHero" />
+        <Form
+          :text="'Save New Hero'"
+          :obj="heroForm"
+          @handleSubmit="addHeroAction(heroForm); heroForm = {}"
+        />
       </div>
     </div>
     <div v-if="isLoading" style="display: flex; flex-direction: row; justify-content: center;">
@@ -95,10 +99,13 @@ export default {
       "addHeroAction",
       "updateHeroAction",
     ]),
+
+    /* In html template or in code
     onSubmitHero() {
       this.addHeroAction(this.heroForm);
       this.heroForm = {};
     },
+    */
   },
 
   mounted() {
