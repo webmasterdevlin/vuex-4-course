@@ -32,16 +32,16 @@ export const router = createRouter({
     {
       path: "/login",
       name: "login",
-      meta:{
-          title: "Login",
-          requiresAuth: false,
+      meta: {
+        title: "Login",
+        requiresAuth: false,
       },
       component: () => import("../auth/views/Login"),
     },
     {
       path: "/continue-as",
       name: "continue-as",
-      meta:{
+      meta: {
         title: "ContinueAs",
         requiresAuth: false,
       },
@@ -50,7 +50,7 @@ export const router = createRouter({
     {
       path: "/register",
       name: "register",
-      meta:{
+      meta: {
         title: "Register",
         requiresAuth: false,
       },
@@ -59,7 +59,7 @@ export const router = createRouter({
     {
       path: "/forgot-password",
       name: "forgetPassword",
-      meta:{
+      meta: {
         title: "Forget Password",
         requiresAuth: false,
       },
@@ -69,16 +69,5 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    authGuard(to, from, next);
+  authGuard(to, from, next);
 })
-
-
-const dirLog = {
-  "": "？",
-  back: "⏪",
-  forward: "⏩",
-};
-
-routerHistory.listen((to, from, info) => {
-  console.log(`${dirLog[info.direction]} as a ${info.type}`);
-});
