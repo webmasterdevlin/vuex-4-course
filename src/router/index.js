@@ -19,13 +19,3 @@ export const router = createRouter({
     },
   ],
 });
-
-const dirLog = {
-  "": "？",
-  back: "⏪",
-  forward: "⏩",
-};
-
-routerHistory.listen((to, from, info) => {
-  console.log(`${dirLog[info.direction]} as a ${info.type}`);
-});

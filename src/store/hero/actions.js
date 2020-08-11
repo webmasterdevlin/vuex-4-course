@@ -6,6 +6,8 @@ export function getHeroesAction({ commit }) {
 
   return get("heroes")
     .then(({ data }) => commit(types.GET_HEROES, data))
-    .catch((e) => commit(types.ERROR_HERO, e.message))
+    .catch((e) => {
+      console.log(e.message);
+    })
     .finally(() => commit(types.ISLOADING_HERO, false));
 }
