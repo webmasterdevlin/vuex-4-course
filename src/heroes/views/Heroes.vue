@@ -14,11 +14,13 @@
       </div>
     </div>
     <div v-if="isLoading" style="display: flex; flex-direction: row; justify-content: center;">
+      <!-- reusable, can be saparated to its own file -->
       <div class="spinner-border" style="width: 6rem; height: 6rem; color: purple;" role="status">
         <span class="sr-only">Loading...</span>
       </div>
     </div>
     <section v-else>
+      <!-- reusable, can be saparated to its own file -->
       <div v-if="heroes.length > 0">
         <div class="card mt-3" style="width: auto;" v-for="hero in heroes" :key="hero.id">
           <div class="card-header">
