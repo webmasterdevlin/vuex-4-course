@@ -1,8 +1,10 @@
 # vue3-course
 
 ```zsh
-$ vue create froncon-2020-vuejs
+$ vue create frontcon-2020-vuejs-workshop
 ```
+
+Push to Github
 
 ## Migrate to Vuejs 3
 
