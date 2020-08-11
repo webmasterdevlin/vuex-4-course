@@ -1,12 +1,4 @@
 {
-  "users": [
-    {
-      "email": "zeb@gmail.com",
-      "password": "$2a$10$DHi7g74fqA8gWscPkByKz.st/2yJQZt1E7F9EZx/LhdAkaio3gKi6",
-
-      "id": "9gIzkXe"
-    }
-  ],
   "heroes": [
     {
       "id": "7ggew732dw",
