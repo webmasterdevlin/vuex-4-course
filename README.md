@@ -1,9 +1,13 @@
 # vue3-course
 
+```zsh
+$ vue create froncon-2020-vuejs
+```
+
 ## Migrate to Vuejs 3
 
-```
-vue add vue-next
+```zsh
+$ vue add vue-next
 ```
 
 ## Upgrade to latest npm packages
@@ -12,27 +16,27 @@ vue add vue-next
 - Go to package.json
 - Upgrade all packages
 
-```
-rm -rf node_modules
+```zsh
+$ rm -rf node_modules
 ```
 
 ## Project setup
 
-```
-npm cache clean -f
-npm install
+```zsh
+$ npm cache clean -f
+$ npm install
 ```
 
 ### Compiles and hot-reloads for development
 
-```
-npm run serve
+```zsh
+$ npm run serve
 ```
 
 ### Compiles and minifies for production
 
-```
-npm run build
+```zsh
+$ npm run build
 ```
 
 ### Vuex Setup
