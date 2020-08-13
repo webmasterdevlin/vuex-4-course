@@ -3,12 +3,7 @@
     <h1>Heroes Works!</h1>
     <section>
       <div v-if="heroes.length > 0">
-        <div
-          class="card mt-3"
-          style="width: auto;"
-          v-for="hero in heroes"
-          :key="hero.id"
-        >
+        <div class="card mt-3" style="width: auto;" v-for="hero in heroes" :key="hero.id">
           <div class="card-header">
             <h3 class="card-title">{{ hero.firstName }} {{ hero.lastName }}</h3>
             <h5 class="card-subtitle mb-2 text-muted">{{ hero.house }}</h5>
@@ -30,14 +25,14 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters("hero", {
+    ...mapGetters("heroModule", {
       heroes: "heroes",
       isLoading: "isLoading",
       error: "error",
     }),
   },
   methods: {
-    ...mapActions("hero", ["getHeroesAction"]),
+    ...mapActions("heroModule", ["getHeroesAction"]),
   },
   mounted() {
     this.getHeroesAction();
