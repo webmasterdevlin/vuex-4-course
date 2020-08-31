@@ -1,16 +1,16 @@
 <template>
-  <div class="card my-3" style="width: auto;">
+  <div class="card my-3" style="width: auto">
     <VeeForm
       @submit="onSubmit"
       :validation-schema="heroYupValidation"
       class="card-header"
-      style="min-width: 460px;"
+      style="min-width: 460px"
     >
       <div class="d-flex flex-column">
         <section class="form-group">
-          <label for="firstName" class="mr-2">First Name</label>
+          <label for="firstName" class="mr-4">First Name</label>
           <ErrorMessage name="firstName" class="text-danger" />
-          <VeeField
+          <Field
             id="firstName"
             v-model="obj.firstName"
             placeholder="📛"
@@ -23,9 +23,9 @@
         </section>
 
         <section class="form-group">
-          <label for="lastName" class="mr-2">Last Name</label>
+          <label for="lastName" class="mr-4">Last Name</label>
           <ErrorMessage name="lastName" class="text-danger" />
-          <VeeField
+          <Field
             id="lastName"
             v-model="obj.lastName"
             placeholder="📛"
@@ -37,9 +37,9 @@
           />
         </section>
         <section class="form-group">
-          <label for="house" class="mr-2">House</label>
+          <label for="house" class="mr-4">House</label>
           <ErrorMessage name="house" class="text-danger" />
-          <VeeField
+          <Field
             id="house"
             v-model="obj.house"
             placeholder="🏠"
@@ -51,9 +51,9 @@
           />
         </section>
         <section class="form-group">
-          <label for="knownAs" class="mr-2">Known as</label>
+          <label for="knownAs" class="mr-4">Known as</label>
           <ErrorMessage name="knownAs" class="text-danger" />
-          <VeeField
+          <Field
             id="knownAs"
             v-model="obj.knownAs"
             placeholder="👀"
@@ -64,21 +64,23 @@
             class="form-control"
           />
         </section>
-        <button type="submit" :disabled="validate" class="btn btn-success">{{ text }}</button>
+        <button type="submit" class="btn btn-success">
+          {{ text }}
+        </button>
       </div>
     </VeeForm>
   </div>
 </template>
 
 <script>
-import { Field as VeeField, Form as VeeForm, ErrorMessage } from "vee-validate";
+import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
 import { heroYupValidation } from "./heroYupValidation";
 
 export default {
   name: "Form",
   components: {
     VeeForm,
-    VeeField,
+    Field,
     ErrorMessage,
   },
   data: () => ({
