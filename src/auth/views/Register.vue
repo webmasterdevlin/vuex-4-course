@@ -1,11 +1,17 @@
 <template>
   <div>
-    <form @submit.prevent="onSubmit">
+    <Form
+      v-slot="{ values }"
+      @submit="onSubmit"
+      :validation-schema="registerYupValidation"
+    >
       <h3>Register</h3>
-
       <section class="form-group">
-        <label for="email">Email address</label>
-        <input
+        <label for="email" class="mr-4">Email address</label>
+        <ErrorMessage name="email" class="text-danger" />
+        <Field
+          name="email"
+          as="input"
           v-model="registerForm.email"
           placeholder="📧"
           autocomplete="off"
@@ -16,8 +22,11 @@
       </section>
 
       <section class="form-group">
-        <label for="password">Password</label>
-        <input
+        <label for="password" class="mr-4">Password</label>
+        <ErrorMessage name="password" class="text-danger" />
+        <Field
+          name="password"
+          as="input"
           v-model="registerForm.password"
           placeholder="🔑"
           autocomplete="off"
@@ -27,33 +36,43 @@
         />
       </section>
 
-      <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
+      <button type="submit" class="btn btn-dark btn-lg btn-block">
+        Register
+      </button>
 
       <p class="forgot-password text-right">
         Already registered
         <router-link :to="{ name: 'login' }">sign in?</router-link>
       </p>
-    </form>
+      <pre>{{ values }}</pre>
+    </Form>
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import { Field, Form, ErrorMessage } from "vee-validate";
+import {
+  registerYupValidation,
+  registerForm,
+} from "../schema/registerYupValidation";
 
 export default {
   name: "Register",
-
+  components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
   data: () => ({
-    registerForm: {
-      email: "",
-      password: "",
-    },
+    registerYupValidation,
+    registerForm,
   }),
 
   methods: {
     ...mapActions("authModule", ["registerUserAction"]),
 
-    onSubmit() {
+    onSubmit(values) {
       this.registerUserAction(this.registerForm).then(() => {
         this.$router.push({ name: "heroes" });
       });
@@ -62,6 +81,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

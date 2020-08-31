@@ -1,11 +1,18 @@
 <template>
   <div>
-    <form @submit.prevent="onSubmit">
+    <Form
+      v-slot="{ values }"
+      @submit="onSubmit"
+      :validation-schema="loginYupValidation"
+    >
       <h3>Login</h3>
 
       <section class="form-group">
-        <label for="email">Email address</label>
-        <input
+        <label for="email" class="mr-4">Email address</label>
+        <ErrorMessage name="email" class="text-danger" />
+        <Field
+          name="email"
+          as="input"
           v-model="loginForm.email"
           placeholder="📧"
           autocomplete="off"
@@ -16,8 +23,11 @@
       </section>
 
       <section class="form-group">
-        <label for="password">Password</label>
-        <input
+        <label for="password" class="mr-4">Password</label>
+        <ErrorMessage name="password" class="text-danger" />
+        <Field
+          name="password"
+          as="input"
           v-model="loginForm.password"
           placeholder="🔑"
           autocomplete="off"
@@ -32,21 +42,27 @@
       <p class="forgot-password text-right mt-2 mb-4">
         <router-link to="/forgot-password">Forgot password ?</router-link>
       </p>
-    </form>
+      <pre>{{ values }}</pre>
+    </Form>
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import { Field, Form, ErrorMessage } from "vee-validate";
+import { loginYupValidation, loginForm } from "../schema/loginYupValidation";
 
 export default {
   name: "Login",
+  components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
 
   data: () => ({
-    loginForm: {
-      email: "",
-      password: "",
-    },
+    loginForm,
+    loginYupValidation,
   }),
 
   methods: {
@@ -60,6 +76,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
