@@ -42,30 +42,34 @@ $ npm run build
 ```
 
 ### What to build in order
- - upgrade/migrate to Vue.js 3
- - npm i bootstrap 5 alpha
- - npm i  bootstrap-icon
- - Navbar
- - Heroes (class card)
- - npm i vue-router 4
- - Router
- - npm i vuex 4
- - Setup Vuex 4 - hero module
- - Get Request (v-for)
- - Delete Request (class btn btn-danger)
- - Post Request (Form)
- - Put Request (editingTracker, v-if, v-else)
- - npm i jsonwebtoken
- - npm i -D @types/jsonwebtoken json-server-auth
- - Setup Vuex 4 - auth module
- - Register
- - Login
- - update auth service
- - authGuard
- - update router with meta requiresAuth and router BeforeEach
- - ForgotPassword
- - ContinueAs
- - Done! Now do the Villain part with its own page and Vuex module.
+
+- upgrade/migrate to Vue.js 3
+- npm i bootstrap 5 alpha
+- npm i bootstrap-icon
+- Navbar
+- Heroes (class card)
+- npm i vue-router 4
+- Router
+- npm i vuex 4
+- Setup Vuex 4 - hero module
+- Get Request (v-for)
+- Delete Request (class btn btn-danger)
+- Post Request (Form)
+- Put Request (editingTracker, v-if, v-else)
+- Vee Validation
+- npm i -D vee-validate@next yup
+- implement validation on Form.vue
+- npm i jsonwebtoken
+- npm i -D @types/jsonwebtoken json-server-auth
+- Setup Vuex 4 - auth module
+- Register
+- Login
+- update auth service
+- authGuard
+- update router with meta requiresAuth and router BeforeEach
+- ForgotPassword
+- ContinueAs
+- Done! Now do the Villain part with its own page and Vuex module.
 
 ### Vuex Setup
 
