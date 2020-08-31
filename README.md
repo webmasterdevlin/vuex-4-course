@@ -55,6 +55,9 @@ $ npm run build
  - Delete Request (class btn btn-danger)
  - Post Request (Form)
  - Put Request (editingTracker, v-if, v-else)
+ - Vee Validation
+ - npm i -D vee-validate@next yup
+ - implement validation on Form.vue 
  - npm i jsonwebtoken
  - npm i -D @types/jsonwebtoken json-server-auth
  - Setup Vuex 4 - auth module
