@@ -2,7 +2,6 @@
   <div class="card my-3" style="width: auto;">
     <VeeForm
       @submit="onSubmit"
-      v-slot="{ isSubmitting, handleReset }"
       :validation-schema="heroYupValidation"
       class="card-header"
       style="min-width: 460px;"
@@ -65,9 +64,7 @@
             class="form-control"
           />
         </section>
-        <button type="submit" :disabled="validate" class="btn btn-success">
-          {{ text }}
-        </button>
+        <button type="submit" :disabled="validate" class="btn btn-success">{{ text }}</button>
       </div>
     </VeeForm>
   </div>
