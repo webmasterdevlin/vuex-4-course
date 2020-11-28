@@ -1,4 +1,4 @@
-import { store } from "../store";
+import { store } from "@/store";
 import { isTokenFromLocalStorageValid } from "./auth.service";
 
 export const authGuard = (to, from, next) => {
