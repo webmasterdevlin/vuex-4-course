@@ -13,7 +13,7 @@
         </ul>
         <section v-if="isAuthenticated">
           <ul class="nav navbar-nav flex-row float-right">
-            <li class="nav-item pr-3">
+            <li class="nav-item me-4">
               <span>{{email}}</span>
             </li>
             <li class="nav-item">
@@ -24,7 +24,7 @@
         <section v-else>
           <ul class="nav navbar-nav flex-row float-right">
             <li class="nav-item">
-              <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
+              <router-link class="nav-link me-4" to="/login">Sign in</router-link>
             </li>
             <li class="nav-item">
               <router-link class="btn btn-outline-primary" to="/register">Sign up</router-link>

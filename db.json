@@ -1,19 +1,9 @@
 {
   "users": [
     {
-      "email": "zeb@gmail.com",
-      "password": "$2a$10$DHi7g74fqA8gWscPkByKz.st/2yJQZt1E7F9EZx/LhdAkaio3gKi6",
-      "id": "9gIzkXe"
-    },
-    {
-      "email": "student.devlin@gmail.com",
-      "password": "$2a$10$OG2sLECRs.KWGXha1eV71eqirveIKtS9jTDSa9Dui8JSRnAuQTECW",
-      "id": "A7G2TZD"
-    },
-    {
-      "email": "devlin@gmail.com",
-      "password": "$2a$10$GQdarzltogxlWO2IGSVEyutwvxG.CdzYzjWp33fYtrRkolB1w2GKK",
-      "id": "3jYb42q"
+      "email": "yoursuperhero@gmail.com",
+      "password": "$2a$10$DNkj35/oj12AirxGTwXgG.ZvncnxkuY5G36X9CKkz0BECF5guisEy",
+      "id": 1
     }
   ],
   "heroes": [
