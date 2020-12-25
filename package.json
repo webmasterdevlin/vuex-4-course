@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "backend": "json-server --watch db.json --port 5000 --delay=1000 -m ./node_modules/json-server-auth",
-    "start:fullstack": "concurrently \"npm run backend\" \"npm run serve\""
+    "serve:fullstack": "concurrently \"npm run backend\" \"npm run serve\""
   },
   "dependencies": {
     "axios": "^0.21.1",
