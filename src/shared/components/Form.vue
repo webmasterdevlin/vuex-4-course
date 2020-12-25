@@ -8,7 +8,7 @@
     >
       <div class="d-flex flex-column">
         <section class="form-group">
-          <label for="firstName" class="mr-4">First Name</label>
+          <label for="firstName" class="me-4">First Name</label>
           <ErrorMessage name="firstName" class="text-danger" />
           <Field
             id="firstName"
@@ -23,7 +23,7 @@
         </section>
 
         <section class="form-group">
-          <label for="lastName" class="mr-4">Last Name</label>
+          <label for="lastName" class="me-4">Last Name</label>
           <ErrorMessage name="lastName" class="text-danger" />
           <Field
             id="lastName"
@@ -37,7 +37,7 @@
           />
         </section>
         <section class="form-group">
-          <label for="house" class="mr-4">House</label>
+          <label for="house" class="me-4">House</label>
           <ErrorMessage name="house" class="text-danger" />
           <Field
             id="house"
@@ -51,7 +51,7 @@
           />
         </section>
         <section class="form-group">
-          <label for="knownAs" class="mr-4">Known as</label>
+          <label for="knownAs" class="me-4">Known as</label>
           <ErrorMessage name="knownAs" class="text-danger" />
           <Field
             id="knownAs"
@@ -83,9 +83,7 @@ export default {
     Field,
     ErrorMessage,
   },
-  data: () => ({
-    heroYupValidation,
-  }),
+
   props: {
     text: {
       type: String,
@@ -96,6 +94,11 @@ export default {
       default: () => {},
     },
   },
+
+  data: () => ({
+    heroYupValidation,
+  }),
+
   methods: {
     onSubmit() {
       this.$emit("handleSubmit");
