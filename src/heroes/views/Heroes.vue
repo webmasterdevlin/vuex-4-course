@@ -49,6 +49,7 @@
                 />
               </div>
             </div>
+
             <div v-else>
               <h3 class="card-title">
                 {{ hero.firstName }} {{ hero.lastName }}
@@ -57,6 +58,7 @@
               <p class="card-text">{{ hero.knownAs }}</p>
             </div>
           </div>
+
           <section class="card-body">
             <div class="row">
               <button

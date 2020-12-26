@@ -1,33 +1,39 @@
 <template>
   <div style="margin-bottom: 5rem">
     <nav
-      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
+      class="sticky-top navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
       style="margin-bottom: 100px"
     >
       <div class="container">
         <router-link to="/" class="navbar-brand float-left">LOGO</router-link>
         <ul class="nav navbar-nav d-flex flex-row bd-highlight">
           <li class="nav-item">
-            <router-link to="/heroes" exact class="nav-link">Heroes</router-link>
+            <router-link to="/heroes" exact class="nav-link"
+              >Heroes</router-link
+            >
           </li>
         </ul>
         <section v-if="isAuthenticated">
           <ul class="nav navbar-nav flex-row float-right">
             <li class="nav-item me-4">
-              <span>{{email}}</span>
+              <span>{{ email }}</span>
             </li>
             <li class="nav-item">
-              <a href="/" onclick="localStorage.clear('token')" >Logout</a>
+              <a href="/" onclick="localStorage.clear('token')">Logout</a>
             </li>
           </ul>
         </section>
         <section v-else>
           <ul class="nav navbar-nav flex-row float-right">
             <li class="nav-item">
-              <router-link class="nav-link me-4" to="/login">Sign in</router-link>
+              <router-link class="nav-link me-4" to="/login"
+                >Sign in</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link class="btn btn-outline-primary" to="/register">Sign up</router-link>
+              <router-link class="btn btn-outline-primary" to="/register"
+                >Sign up</router-link
+              >
             </li>
           </ul>
         </section>

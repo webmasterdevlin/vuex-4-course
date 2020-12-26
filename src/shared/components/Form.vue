@@ -6,7 +6,7 @@
       class="card-header"
       style="min-width: 460px"
     >
-      <div class="d-flex flex-column">
+    
         <section class="form-group">
           <label for="firstName" class="me-4">First Name</label>
           <ErrorMessage name="firstName" class="text-danger" />
