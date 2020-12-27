@@ -1,15 +1,15 @@
 <template>
-  <div class="sticky-top" style="margin-bottom: 5rem">
+  <div class="sticky-top">
     <nav
       class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row"
-      style="margin-bottom: 100px"
+      style="margin-bottom: 2rem"
     >
       <div class="container">
         <router-link to="/" class="navbar-brand float-left">LOGO</router-link>
         <ul class="nav navbar-nav d-flex flex-row bd-highlight">
           <li class="nav-item">
             <router-link to="/heroes" exact class="nav-link"
-              >Heroes {{ heroes.length > 0 ? heroes.length : "" }}</router-link
+              >{{ heroes.length > 0 ? heroes.length : "" }} Heroes</router-link
             >
           </li>
         </ul>
