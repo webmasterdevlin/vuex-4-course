@@ -1,9 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-// there is also createWebHashHistory and createMemoryHistory
-import Heroes from "../heroes/views/Heroes";
-import Home from "../views/Home";
-import { authGuard } from "@/auth/authGuard";
-import { isTokenFromLocalStorageValid } from "@/auth/auth.service";
+import Home from "@/views/Home";
 
 const routerHistory = createWebHistory(process.env.BASE_URL);
 
@@ -17,76 +13,23 @@ export const router = createRouter({
       component: Home,
       meta: {
         title: "Home",
-        requiresAuth: false,
       },
     },
     {
       path: "/heroes",
       name: "heroes",
-      component: Heroes,
       meta: {
         title: "Heroes",
-        requiresAuth: true,
       },
+      component: () => import("../heroes/views/Heroes"),
     },
     {
-      path: "/login",
-      name: "login",
+      path: "/anti-heroes",
+      name: "anti-heroes",
       meta: {
-        title: "Login",
-        requiresAuth: false,
+        title: "Anti-Heroes",
       },
-      component: () => import("../auth/views/Login"),
-    },
-    {
-      path: "/continue-as",
-      name: "continue-as",
-      meta: {
-        title: "ContinueAs",
-        requiresAuth: false,
-      },
-      beforeEnter: (to, from, next) => {
-        if (!localStorage.getItem("token")) {
-          next("/");
-        } else if (isTokenFromLocalStorageValid()) {
-          next();
-        } else {
-          next(false);
-        }
-      },
-      component: () => import("../auth/views/ContinueAs"),
-    },
-    {
-      path: "/register",
-      name: "register",
-      meta: {
-        title: "Register",
-        requiresAuth: false,
-      },
-      component: () => import("../auth/views/Register"),
-    },
-    {
-      path: "/forgot-password",
-      name: "forgetPassword",
-      meta: {
-        title: "Forget Password",
-        requiresAuth: false,
-      },
-      component: () => import("../auth/views/ForgotPassword"),
+      component: () => import("../anti-heroes/views/AntiHeroes"),
     },
   ],
-});
-
-router.beforeEach((to, from, next) => {
-  authGuard(to, from, next);
-});
-
-const dirLog = {
-  "": "？",
-  back: "⏪",
-  forward: "⏩",
-};
-
-routerHistory.listen((to, from, info) => {
-  console.log(`${dirLog[info.direction]} as a ${info.type}`);
 });

@@ -34,7 +34,60 @@
       "lastName": "Wayne",
       "house": "DC",
       "knownAs": "Batman"
+    }
+  ],
+  "anti-heroes": [
+    {
+      "id": "4893hfwuig",
+      "firstName": "Eddy",
+      "lastName": "Brock",
+      "house": "Marvel",
+      "knownAs": "Venom"
     },
+    {
+      "id": "9greg7t767g",
+      "firstName": "Wade",
+      "lastName": "Wilson",
+      "house": "Marvel",
+      "knownAs": "Deadpool"
+    },
+    {
+      "id": "89g6d5i6e45ud",
+      "firstName": "Jason",
+      "lastName": "Blood",
+      "house": "DC",
+      "knownAs": "Etrigan"
+    },
+    {
+      "id": "hvhj89gg8pt67",
+      "firstName": "Harley",
+      "lastName": "Quinn",
+      "house": "DC",
+      "knownAs": "Harley"
+    },
+    {
+      "id": "v7xSZAV",
+      "firstName": "Selina",
+      "lastName": "Kyle",
+      "house": "DC",
+      "knownAs": "Catwoman"
+    },
+    {
+      "id": "Nmla4EH",
+      "firstName": "Max",
+      "lastName": "Eisenhardt",
+      "house": "Marvel",
+      "knownAs": "Magneto"
+    },
+    {
+      "id": "P6jyeRc",
+      "firstName": "bjgjhgh",
+      "lastName": "adsad",
+      "house": "asdsadas",
+      "knownAs": "dasd"
+    }
+  ],
+  "villains": [
     {
       "firstName": "Lex",
       "lastName": "Luther",
@@ -62,13 +115,6 @@
       "lastName": "Von Doom",
       "house": "Marvel",
       "knownAs": "Doctor Doom"
-    },
-    {
-      "firstName": "Devlin",
-      "lastName": "Duldulao",
-      "house": "inmeta",
-      "knownAs": "Ninja Wah",
-      "id": "xHFU7Tq"
     }
   ]
 }

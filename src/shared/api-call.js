@@ -18,11 +18,3 @@ export async function post(path, obj) {
 export async function put(path, obj) {
   return await api.put(`${path}/${obj.id}`, obj);
 }
-
-export async function loginUserAxios(login) {
-  return await api.post("login", login);
-}
-
-export async function registerUserAxios(register) {
-  return await api.post("register", register);
-}

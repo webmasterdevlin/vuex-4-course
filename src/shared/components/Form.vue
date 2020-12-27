@@ -2,7 +2,7 @@
   <div class="card my-3" style="width: auto">
     <VeeForm
       @submit="onSubmit"
-      :validation-schema="heroYupValidation"
+      :validation-schema="yupValidation"
       class="card-header"
       style="min-width: 460px"
     >
@@ -72,7 +72,7 @@
 
 <script>
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
-import { heroYupValidation } from "./heroYupValidation";
+import { yupValidation } from "./yupValidation";
 
 export default {
   name: "Form",
@@ -94,7 +94,7 @@ export default {
   },
 
   data: () => ({
-    heroYupValidation,
+    yupValidation: yupValidation,
   }),
 
   methods: {
