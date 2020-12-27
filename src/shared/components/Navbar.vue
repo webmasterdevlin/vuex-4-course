@@ -1,7 +1,7 @@
 <template>
-  <div style="margin-bottom: 5rem">
+  <div class="sticky-top" style="margin-bottom: 5rem">
     <nav
-      class="sticky-top navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
+      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row"
       style="margin-bottom: 100px"
     >
       <div class="container">
@@ -9,7 +9,7 @@
         <ul class="nav navbar-nav d-flex flex-row bd-highlight">
           <li class="nav-item">
             <router-link to="/heroes" exact class="nav-link"
-              >Heroes</router-link
+              >Heroes {{ heroes.length > 0 ? heroes.length : "" }}</router-link
             >
           </li>
         </ul>
@@ -52,6 +52,10 @@ export default {
     ...mapGetters("authModule", {
       isAuthenticated: "isAuthenticated",
       email: "email",
+    }),
+
+    ...mapGetters("heroModule", {
+      heroes: "heroes",
     }),
   },
 };

@@ -60,7 +60,7 @@
           </div>
 
           <section class="card-body">
-            <div class="row">
+            <div>
               <button
                 v-if="editingTracker === hero.id"
                 @click="() => (editingTracker = '0')"
