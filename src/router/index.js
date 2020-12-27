@@ -10,10 +10,10 @@ export const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Home,
       meta: {
         title: "Home",
       },
+      component: Home,
     },
     {
       path: "/heroes",
@@ -21,7 +21,7 @@ export const router = createRouter({
       meta: {
         title: "Heroes",
       },
-      component: () => import("../heroes/views/Heroes"),
+      component: () => import("../views/Heroes"),
     },
     {
       path: "/anti-heroes",
@@ -29,7 +29,7 @@ export const router = createRouter({
       meta: {
         title: "Anti-Heroes",
       },
-      component: () => import("../anti-heroes/views/AntiHeroes"),
+      component: () => import("../views/AntiHeroes"),
     },
   ],
 });
