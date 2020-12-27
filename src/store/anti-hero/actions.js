@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { get, deleteById, post, put } from "@/shared/api-call";
+import { get, deleteById, post, put } from "@/api/axiosConfig";
 
 export function getAntiHeroesAction({ commit }) {
   commit(types.IS_LOADING_ANTI_HERO, true);

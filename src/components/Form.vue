@@ -72,7 +72,7 @@
 
 <script>
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
-import { yupValidation } from "./yupValidation";
+import { yupValidation } from "../helpers/yupValidation";
 
 export default {
   name: "Form",
