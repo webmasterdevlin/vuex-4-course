@@ -3,7 +3,7 @@
     <HeaderNav></HeaderNav>
     <div class="container">
       <div class="vertical-center">
-        <div >
+        <div>
           <router-view></router-view>
         </div>
       </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import HeaderNav from "./shared/components/Navbar";
+import HeaderNav from "@/shared/components/Navbar";
 export default {
   name: "App",
   components: {
@@ -25,8 +25,9 @@ export default {
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 /* @import "../node_modules/bootstrap-icons"; */
 
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-bottom: 2rem;
 }
 input {

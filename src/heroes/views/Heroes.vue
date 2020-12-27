@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mb-5">
     <h1>Heroes Works!</h1>
     <div
       v-if="editingTracker === '0'"
