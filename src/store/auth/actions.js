@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { loginUserAxios, registerUserAxios } from "@/shared/api-call";
+import { loginUserAxios, registerUserAxios } from "@/api/axiosConfig";
 import {
   getAccessToken,
   isTokenFromLocalStorageValid,

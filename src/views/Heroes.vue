@@ -92,7 +92,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import Form from "@/shared/components/Form";
+import Form from "@/components/Form";
 import { ref } from "vue";
 
 export default {

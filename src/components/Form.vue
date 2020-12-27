@@ -72,7 +72,7 @@
 
 <script>
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
-import { heroYupValidation } from "./heroYupValidation";
+import { yupValidation } from "../helpers/yupValidation";
 
 export default {
   name: "Form",
@@ -94,7 +94,7 @@ export default {
   },
 
   data: () => ({
-    heroYupValidation,
+    heroYupValidation: yupValidation,
   }),
 
   methods: {

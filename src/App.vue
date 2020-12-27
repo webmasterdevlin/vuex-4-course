@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import HeaderNav from "@/shared/components/Navbar";
+import HeaderNav from "@/components/Navbar";
 export default {
   name: "App",
   components: {
