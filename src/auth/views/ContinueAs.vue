@@ -10,7 +10,7 @@
 
 <script>
 import { mapActions } from "vuex";
-import { getUserEmailFromToken, logOut } from "../auth.service";
+import { getUserEmailFromToken, logOut } from "@/auth/auth.service";
 
 export default {
   name: "ContinueAs",

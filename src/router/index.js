@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 // there is also createWebHashHistory and createMemoryHistory
 import Heroes from "../heroes/views/Heroes";
 import Home from "../views/Home";
-import { authGuard } from "../auth/authGuard";
-import { isTokenFromLocalStorageValid } from "../auth/auth.service";
+import { authGuard } from "@/auth/authGuard";
+import { isTokenFromLocalStorageValid } from "@/auth/auth.service";
 
 const routerHistory = createWebHistory(process.env.BASE_URL);
 

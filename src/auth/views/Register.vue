@@ -55,7 +55,7 @@ import { Field, Form, ErrorMessage } from "vee-validate";
 import {
   registerYupValidation,
   registerForm,
-} from "../schema/registerYupValidation";
+} from "@/auth/schema/registerYupValidation";
 
 export default {
   name: "Register",
