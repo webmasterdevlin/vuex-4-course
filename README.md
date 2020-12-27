@@ -1,12 +1,12 @@
-# vue3-course
+# Vuex 4 Course
 
 ```zsh
-$ vue create frontcon-2020-vuejs-workshop
+$ vue create project-name
 ```
 
 Push to Github
 
-## Migrate to Vuejs 3
+## Migrate to Vue 3
 
 ```zsh
 $ vue add vue-next
