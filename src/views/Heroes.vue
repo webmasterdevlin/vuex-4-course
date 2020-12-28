@@ -5,7 +5,7 @@
       v-if="editingTracker === '0'"
       class="d-flex flex-row justify-content-start"
     >
-      <div class="mb-5">
+      <div class="mb-2">
         <Form
           :text="'Save New Hero'"
           :obj="heroForm"
@@ -38,7 +38,7 @@
               v-if="editingTracker === hero.id"
               class="d-flex flex-row justify-content-start"
             >
-              <div class="mb-5">
+              <div class="mb-2">
                 <Form
                   :text="'Update Hero'"
                   :obj="hero"
