@@ -3,9 +3,9 @@
     <h1>Heroes Works!</h1>
     <div
       v-if="editingTracker === '0'"
-      style="display: flex; place-content: center; place-items: center"
+      class="d-flex flex-row justify-content-start"
     >
-      <div class="mb-5">
+      <div class="mb-2">
         <Form
           :text="'Save New Hero'"
           :obj="heroForm"
@@ -16,10 +16,7 @@
         />
       </div>
     </div>
-    <div
-      v-if="isLoading"
-      style="display: flex; flex-direction: row; justify-content: center"
-    >
+    <div v-if="isLoading" class="d-flex flex-row justify-content-center">
       <!-- reusable, can be separated to its own file -->
       <div
         class="spinner-border"
@@ -39,9 +36,9 @@
           <div class="card-header">
             <div
               v-if="editingTracker === hero.id"
-              style="display: flex; place-content: center; place-items: center"
+              class="d-flex flex-row justify-content-start"
             >
-              <div class="mb-5">
+              <div class="mb-2">
                 <Form
                   :text="'Update Hero'"
                   :obj="hero"
