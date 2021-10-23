@@ -1,7 +1,14 @@
 <template>
   <div class="sticky-top">
     <nav
-      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row"
+      class="
+        navbar
+        shadow
+        bg-white
+        rounded
+        justify-content-between
+        flex-nowrap flex-row
+      "
       style="margin-bottom: 2rem"
     >
       <div class="container">
@@ -27,20 +34,25 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { computed, defineComponent } from "vue";
+import { store } from "@/store";
 
-export default {
+export default defineComponent({
   name: "Navbar",
+  setup() {
+    const antiHeroes = computed(() => {
+      return store.getters["antiHeroModule/antiHeroes"];
+    });
+    const heroes = computed(() => {
+      return store.getters["heroModule/heroes"];
+    });
 
-  computed: {
-    ...mapGetters("heroModule", {
-      heroes: "heroes",
-    }),
-    ...mapGetters("antiHeroModule", {
-      antiHeroes: "antiHeroes",
-    }),
+    return {
+      antiHeroes,
+      heroes,
+    };
   },
-};
+});
 </script>
 
 <style scoped></style>

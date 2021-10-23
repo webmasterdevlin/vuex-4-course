@@ -89,15 +89,20 @@
 </template>
 
 <script>
-import {defineComponent, onMounted, ref, computed} from "vue";
+import { defineComponent, onMounted, ref, computed } from "vue";
+
 import Form from "@/components/Form";
 import { store } from "@/store";
+import useLog from "@/hooks/useLog";
 
-/* Vue.js 3 */
+/* Vue.js v3 */
 export default defineComponent({
   name: "AntiHeroes",
   components: { Form },
+
   setup() {
+    const { log } = useLog();
+
     const antiHeroForm = ref({
       id: "",
       firstName: "",
@@ -113,23 +118,23 @@ export default defineComponent({
 
     const removeAntiHero = async (id) => {
       await store.dispatch("antiHeroModule/removeAntiHeroAction", id);
-    }
+    };
 
     const addAntiHero = async (antiHero) => {
-      await store.dispatch("antiHeroModule/addAntiHeroAction", antiHero)
-    }
+      await store.dispatch("antiHeroModule/addAntiHeroAction", antiHero);
+    };
 
     const updateAntiHero = async (antiHero) => {
-     await store.dispatch("antiHeroModule/updateAntiHeroAction", antiHero)
-    }
+      await store.dispatch("antiHeroModule/updateAntiHeroAction", antiHero);
+    };
 
     const antiHeroes = computed(() => {
-      return store?.getters["antiHeroModule/antiHeroes"]
-    })
+      return store?.getters["antiHeroModule/antiHeroes"];
+    });
 
     const isLoading = computed(() => {
-      return store?.getters["antiHeroModule/isLoading"]
-    })
+      return store?.getters["antiHeroModule/isLoading"];
+    });
 
     return {
       antiHeroForm,
@@ -138,7 +143,7 @@ export default defineComponent({
       addAntiHero,
       updateAntiHero,
       antiHeroes,
-      isLoading
+      isLoading,
     };
   },
 });

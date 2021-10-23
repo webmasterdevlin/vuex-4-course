@@ -41,3 +41,4 @@
 - update components with mapGetters and mapActions
 - npm i concurrently json-server
 - copy-paste db.json
+- awesome vue

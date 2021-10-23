@@ -88,23 +88,24 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+
 import Form from "@/components/Form";
 
-/* Vue.js 2 */
+/* Vue.js v2 */
 export default {
   name: "Heroes",
   components: { Form },
 
   data: () => ({
-      heroForm: {
-        id: "",
-        firstName: "",
-        lastName: "",
-        house: "",
-        knownAs: "",
-      },
-      editingTracker: "0",
-    }),
+    heroForm: {
+      id: "",
+      firstName: "",
+      lastName: "",
+      house: "",
+      knownAs: "",
+    },
+    editingTracker: "0",
+  }),
 
   computed: {
     ...mapGetters("heroModule", {

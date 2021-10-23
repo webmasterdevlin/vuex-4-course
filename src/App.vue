@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
+
 import HeaderNav from "@/components/Navbar";
 
 export default defineComponent({
