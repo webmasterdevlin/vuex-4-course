@@ -71,10 +71,11 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
 import { yupValidation } from "@/helpers/yupValidation";
 
-export default defineConponent({
+export default defineComponent({
   name: "Form",
   components: {
     VeeForm,
@@ -93,16 +94,14 @@ export default defineConponent({
     },
   },
 
-  setup() {
-    return { yupValidation };
-  },
+  // emits: ["handleSubmit"],
 
-  emits: ["handleSubmit"],
+  setup(props, context) {
+    const onSubmit = () => {
+      context.emit("handleSubmit");
+    };
 
-  methods: {
-    onSubmit() {
-      this.$emit("handleSubmit");
-    },
+    return { yupValidation, onSubmit };
   },
 });
 </script>
