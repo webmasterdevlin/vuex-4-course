@@ -75,6 +75,7 @@ import { defineComponent } from "vue";
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
 import { yupValidation } from "@/helpers/yupValidation";
 
+/* Vue.js 3 */
 export default defineComponent({
   name: "Form",
   components: {
@@ -93,8 +94,6 @@ export default defineComponent({
       default: () => {},
     },
   },
-
-  // emits: ["handleSubmit"],
 
   setup(props, context) {
     const onSubmit = () => {
