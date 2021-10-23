@@ -88,16 +88,13 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-
 import Form from "@/components/Form";
-import { ref } from "vue";
 
+/* Vue.js 2 */
 export default {
   name: "Heroes",
   components: { Form },
 
-  // Vue 2
-  /*
   data: () => ({
       heroForm: {
         id: "",
@@ -106,27 +103,8 @@ export default {
         house: "",
         knownAs: "",
       },
-
       editingTracker: "0",
     }),
-  */
-
-  // Vue 3
-  setup() {
-    const heroForm = ref({
-      id: "",
-      firstName: "",
-      lastName: "",
-      house: "",
-      knownAs: "",
-    });
-    const editingTracker = ref("0");
-
-    return {
-      heroForm,
-      editingTracker,
-    };
-  },
 
   computed: {
     ...mapGetters("heroModule", {
@@ -147,8 +125,7 @@ export default {
     onSubmitHero() {
       this.addHeroAction(this.heroForm);
       this.heroForm = {};
-    },
-    */
+    } */
   },
 
   mounted() {

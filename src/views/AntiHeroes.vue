@@ -10,7 +10,7 @@
           :text="'Save New AntiHero'"
           :obj="antiHeroForm"
           @handleSubmit="
-            addAntiHeroAction(antiHeroForm);
+            addAntiHero(antiHeroForm);
             antiHeroForm = {};
           "
         />
@@ -42,7 +42,7 @@
                 <Form
                   :text="'Update AntiHero'"
                   :obj="antiHero"
-                  @handleSubmit="updateAntiHeroAction(antiHero)"
+                  @handleSubmit="updateAntiHero(antiHero)"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@
                 Edit
               </button>
               <button
-                @click="removeAntiHeroAction(antiHero.id)"
+                @click="removeAntiHero(antiHero.id)"
                 class="btn btn-outline-danger card-link col text-center"
               >
                 Delete
@@ -89,31 +89,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-
+import {defineComponent, onMounted, ref, computed} from "vue";
 import Form from "@/components/Form";
-import { ref } from "vue";
+import { store } from "@/store";
 
-export default {
+/* Vue.js 3 */
+export default defineComponent({
   name: "AntiHeroes",
   components: { Form },
-
-  // Vue 2
-  /*
-  data: () => ({
-      antiHeroForm: {
-        id: "",
-        firstName: "",
-        lastName: "",
-        house: "",
-        knownAs: "",
-      },
-
-      editingTracker: "0",
-    }),
-  */
-
-  // Vue 3
   setup() {
     const antiHeroForm = ref({
       id: "",
@@ -124,39 +107,41 @@ export default {
     });
     const editingTracker = ref("0");
 
+    onMounted(async () => {
+      await store.dispatch("antiHeroModule/getAntiHeroesAction");
+    });
+
+    const removeAntiHero = async (id) => {
+      await store.dispatch("antiHeroModule/removeAntiHeroAction", id);
+    }
+
+    const addAntiHero = async (antiHero) => {
+      await store.dispatch("antiHeroModule/addAntiHeroAction", antiHero)
+    }
+
+    const updateAntiHero = async (antiHero) => {
+     await store.dispatch("antiHeroModule/updateAntiHeroAction", antiHero)
+    }
+
+    const antiHeroes = computed(() => {
+      return store?.getters["antiHeroModule/antiHeroes"]
+    })
+
+    const isLoading = computed(() => {
+      return store?.getters["antiHeroModule/isLoading"]
+    })
+
     return {
       antiHeroForm,
       editingTracker,
+      removeAntiHero,
+      addAntiHero,
+      updateAntiHero,
+      antiHeroes,
+      isLoading
     };
   },
-
-  computed: {
-    ...mapGetters("antiHeroModule", {
-      antiHeroes: "antiHeroes",
-      isLoading: "isLoading",
-    }),
-  },
-
-  methods: {
-    ...mapActions("antiHeroModule", [
-      "getAntiHeroesAction",
-      "removeAntiHeroAction",
-      "addAntiHeroAction",
-      "updateAntiHeroAction",
-    ]),
-
-    /* In html template or in code
-    onSubmitAntiHero() {
-      this.addAntiHeroAction(this.antiHeroForm);
-      this.antiHeroForm = {};
-    },
-    */
-  },
-
-  mounted() {
-    this.getAntiHeroesAction();
-  },
-};
+});
 </script>
 
 <style scoped></style>

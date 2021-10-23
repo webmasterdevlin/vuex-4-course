@@ -12,13 +12,15 @@
 </template>
 
 <script>
-import HeaderNav from "./components/Navbar";
-export default {
+import {defineComponent} from "vue";
+import HeaderNav from "@/components/Navbar";
+
+export default defineComponent({
   name: "App",
   components: {
     HeaderNav,
   },
-};
+});
 </script>
 
 <style>
