@@ -74,7 +74,7 @@
 import { Field, Form as VeeForm, ErrorMessage } from "vee-validate";
 import { yupValidation } from "@/helpers/yupValidation";
 
-export default {
+export default defineConponent({
   name: "Form",
   components: {
     VeeForm,
@@ -93,16 +93,18 @@ export default {
     },
   },
 
-  data: () => ({
-    yupValidation: yupValidation,
-  }),
+  setup() {
+    return { yupValidation };
+  },
+
+  emits: ["handleSubmit"],
 
   methods: {
     onSubmit() {
       this.$emit("handleSubmit");
     },
   },
-};
+});
 </script>
 
 <style scoped></style>
