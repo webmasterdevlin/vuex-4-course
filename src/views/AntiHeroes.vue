@@ -16,7 +16,7 @@
         />
       </div>
     </div>
-    <div v-if="isLoading" class="d-flex flex-row justify-content-center">
+    <div v-if="loading" class="d-flex flex-row justify-content-center">
       <!-- reusable, can be separated to its own file -->
       <div
         class="spinner-border"
@@ -117,6 +117,7 @@ export default defineComponent({
     });
 
     const removeAntiHero = async (id) => {
+      log("Munich");
       await store.dispatch("antiHeroModule/removeAntiHeroAction", id);
     };
 
@@ -129,11 +130,11 @@ export default defineComponent({
     };
 
     const antiHeroes = computed(() => {
-      return store?.getters["antiHeroModule/antiHeroes"];
+      return store.getters["antiHeroModule/antiHeroes"];
     });
 
-    const isLoading = computed(() => {
-      return store?.getters["antiHeroModule/isLoading"];
+    const loading = computed(() => {
+      return store.getters["antiHeroModule/isLoading"];
     });
 
     return {
@@ -143,7 +144,7 @@ export default defineComponent({
       addAntiHero,
       updateAntiHero,
       antiHeroes,
-      isLoading,
+      loading,
     };
   },
 });
